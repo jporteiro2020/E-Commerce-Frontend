@@ -1,0 +1,104 @@
+main{
+    display: grid;
+    grid-template-areas: "destacado"
+                         "PC-Escritorio"
+                         "Notebooks"
+                         "Consolas";
+    justify-content: center;
+    align-items: center;
+}
+
+/* Esta es la clase del contenedor Section */
+.destacado{
+    grid-area: destacado;
+}
+
+main section{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: "h2"
+                         ".";
+    gap: 15px;
+    margin-top: 5vh;
+}
+
+/* Esta es la clase del contenedor Section, se vuelve a llamar aquí a esta clase, para eliminar el margin-top seteado en el selector
+   anterior (main section) */
+.destacado{
+    margin-top: 0;
+}
+
+main section h2{
+    grid-area: h2;
+}
+
+main section div{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: ".";
+    gap: 60px;
+}
+
+main section div article{
+    display: grid;
+    grid-template-areas: "descripcion descripcion"
+                         "imagen imagen"
+                         "precio carrito";
+    justify-items: center;
+    align-items: center;
+}
+
+/* Esta es la clase del contenedor p, que se encutra dentro del article cuando JavaScript recorre la lista de productos y crea
+   los nuevos article */
+.article-p{
+    grid-area: descripcion;
+}
+
+/* Esta es la clase del contenedor img, que se encutra dentro del article cuando JavaScript recorre la lista de productos y crea
+   los nuevos article */
+.img-article{
+    grid-area: imagen;
+    height: 100px;
+    width: 100px;
+}
+
+/* Esta es la clase del contenedor p, que se encutra dentro del article cuando JavaScript recorre la lista de productos y crea
+   los nuevos article */
+.p-precio-article{
+    grid-area: precio;
+}
+
+/* Esta es la clase del contenedor button, que se encutra dentro del article cuando JavaScript recorre la lista de productos y crea
+   los nuevos article */
+.btnAgregar-article{
+    grid-area: carrito;
+    color: black;
+}
+
+/* Esta es la clase del contenedor Section */
+.PC-Escritorio{
+    grid-area: PC-Escritorio;
+}
+
+/* Esta es la clase del contenedor Section */
+.Notebooks{
+    grid-area: Notebooks;
+}
+
+/* Esta es la clase del contenedor Section */
+.Consolas{
+    grid-area: Consolas;
+}
+
+section h2{
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+/* Aquí comienza la media query para los dispositivos móviles */
+@media (max-width:415px) and (min-width:320px) {
+    .media-q{
+        grid-auto-flow: row;
+        grid-template-columns: auto auto;
+    }
+}

@@ -1,0 +1,99 @@
+/* Se resetean los valores del body */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    font-size: 1.7rem;
+}
+
+/* Page es la clase dada al body */
+.page{
+    display: grid;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    min-height: 100vh;
+}
+
+main{
+    grid-area: main;
+}
+
+/*Aquí comienza la media queries para los dispositivos móviles*/
+@media (max-width:415px) and (min-width:320px){
+
+    .page{
+        font-size: 1rem;
+    }
+
+    header {
+        grid-template-areas: "logo nav contacto carrito";
+    }
+
+    header a{
+        font-size: 1rem;
+    }
+
+    .logo{
+        width: 20vw;
+    }
+
+    .ul-nav li ul li ul {
+        right:-140px;
+    }
+
+    .contacto p{
+        font-size: 1rem;
+    }
+
+    .contacto i{
+        font-size: 1rem;
+    }
+
+    .busqueda{
+        display: none;
+    }
+
+    .carrito p{
+        font-size: 1rem;
+    }
+
+    .carrito i{
+        font-size: 1rem;
+    }
+
+    #nombreNav {
+        display:none;
+    }
+
+    .btn-16{
+        width: 60px;
+        height: 30px;
+    }
+
+    footer{
+        grid-template-areas: "direccionFooter"
+                             "subscipcionFooter";
+        justify-items: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    .subscripcion{
+        width: 60vw;
+        height: 30vh;
+    }
+
+    .direccion-footer{
+        margin-top: 20px;
+    }
+}

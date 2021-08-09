@@ -1,0 +1,31 @@
+/* Esta clase corresponde al form que se encutra en el footer para la suscripción */
+.recuperar{
+    grid-area: recuperar;
+    display: grid;
+    grid-template-areas: "titulo"
+                         "email"
+                         "botonRecuperar";
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+    background: white;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+/* Aquí se comienza a dar estilo a los elementos del form de la suscripción que se encuentran en el footer */
+.recuperar input{
+    height: 5vh;
+    width: 25vw;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(3, 18, 41);
+    outline: none;
+}
+
+#btn-recuperar{
+    height: 6vh;
+    width: 25vw;
+    border: 1px solid rgb(3, 18, 41);
+}

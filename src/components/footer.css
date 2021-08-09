@@ -1,0 +1,65 @@
+footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: "subscipcionFooter direccionFooter";
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c2c;
+    color: white;
+    gap: 80px;
+    margin-top: 5vh;
+}
+
+/* Esta clase corresponde al form que se encutra en el footer para la suscripción */
+.subscripcion{
+    grid-area: subscipcionFooter;
+    display: grid;
+    grid-template-areas: "titulo"
+                         "nombre"
+                         "email"
+                         "botonSuscripcion";
+    justify-content: center;
+    align-content: center;
+    gap: 15px;
+    background: rgb(3, 18, 41);
+    border-radius: 1rem;
+    color: white;
+    height: 25vh;
+    width: 17vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.titulo-suscripcion{
+    grid-area: titulo;
+}
+
+.nombre-suscripcion{
+    grid-area: nombre;
+}
+
+.email-suscripcion{
+    grid-area: email;
+}
+
+.boton-suscripcion{
+    grid-area: botonSuscripcion;
+}
+
+/* Esta clase corresponde al contendor DIV que se encuentra en el footer, contiene la información básica de la empresa */
+.direccion-footer{
+    grid-area: direccionFooter;
+}
+
+/* Aquí se comienza a dar estilo a los elementos del form de la suscripción que se encuentran en el footer */
+.subscripcion input{
+    height: 90%;
+    width: 90%;
+    border: 1px solid rgb(3, 18, 41);
+}
+
+.subscripcion button{
+    height: 90%;
+    width: 90%;
+    border: 1px solid rgb(3, 18, 41);
+}
