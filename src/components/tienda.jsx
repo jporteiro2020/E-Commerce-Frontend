@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import './comun.css';
 import './tienda.css';
 import SectionArticulo from './sectionArticulo';
 

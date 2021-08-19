@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import './comun.css';
 import './header.css';
 
@@ -17,17 +17,16 @@ function Header(){
             <Link to="/"><img src='/Recursos/LOGO.png' alt="Logo" className="logo" /></Link>
             <nav>
                 <ul className="ul-nav">
-                    <li><a href="/"><i className="fas fa-align-justify"></i> <span id="nombreNav">Productos</span></a>
+                    <li><Link to="/tienda"><i className="fas fa-align-justify"></i> <span id="nombreNav">Productos</span></Link>
                         <ul>
-                            <li><a href="/">PC Escritorio</a></li>
-                            <li><a href="/">Notebooks</a></li>
-                            <li><a href="/">Componentes</a></li>
-                            <li><a href="/">Consolas <i className="fas fa-angle-right"></i></a>
+                        <Link to="/pcEscritorio"><li>PC Escritorio</li></Link>
+                        <Link to="/notebooks"><li>Notebooks</li></Link>
+                        <li><Link to="/consolas">Consolas <i className="fas fa-angle-right"></i></Link>
                                 <ul>
-                                    <li><a href="/">Play Station</a></li>
-                                    <li><a href="/">XBOX</a></li>
-                                    <li><a href="/">Nintendo</a></li>
-                                    <li><a href="/">Retro</a></li>
+                                <Link to="/consolasSubCat/playstation"><li>Play Station</li></Link>
+                                <li><Link to="/consolasSubCat/xbox">XBOX</Link></li>
+                                <li><Link to="/consolasSubCat/nintendo">Nintendo</Link></li>
+                                <li><Link to="/consolasSubCat/retro">Retro</Link></li>
                                 </ul>
                             </li>
                         </ul>

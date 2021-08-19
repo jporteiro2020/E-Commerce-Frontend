@@ -13,6 +13,11 @@ import Mapa from './components/mapa';
 import Registro from './components/registro';
 import Recuperar from './components/recuperar';
 import Busqueda from './components/busqueda';
+import PcEscritorio from './components/pcEscritorio';
+import Notebooks from './components/notebooks';
+import Consolas from './components/consolas';
+import ConsolasSubCat from './components/consolasSubCat';
+import DetalleProducto from "./components/detalleProducto";
 
 function App() {
   return (
@@ -42,6 +47,17 @@ function App() {
             <Recuperar />
           </Route>
           <Route path="/busqueda/:stringBusqueda" children={<Busqueda />} />
+          <Route path="/pcEscritorio">
+            <PcEscritorio />
+          </Route>
+          <Route path="/notebooks">
+            <Notebooks />
+          </Route>
+          <Route path="/consolas">
+            <Consolas />
+          </Route>
+          <Route path="/consolasSubCat/:stringCategoria" children={<ConsolasSubCat />} />
+          <Route path="/detalle/:idProducto" children={<DetalleProducto />} />
         </Switch>
         <Footer />
       </Router>

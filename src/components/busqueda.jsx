@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {
     useParams
 } from "react-router-dom";
-//import './comun.css';
 import './tienda.css';
 import SectionArticulo from './sectionArticulo';
 
@@ -29,7 +28,7 @@ function Busqueda(){
                 </div>
             );
         });
-    }, []);
+    }, [stringBusqueda]);
 
     return(
         <main id="main">

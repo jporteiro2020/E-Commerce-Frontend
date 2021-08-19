@@ -8,6 +8,11 @@ main{
     align-items: center;
 }
 
+.aArticle{
+    color: black;
+    font-size: 1rem;
+}
+
 /* Esta es la clase del contenedor Section */
 .destacado{
     grid-area: destacado;
