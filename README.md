@@ -24,7 +24,7 @@ Si ya cuentan con el proyecto de la [API]https://github.com/jporteiro2020/E-Comm
 Debemos abrir una terminal o CMD (dependiendo del sistema operativo en el que te encuentres), y debes posicionarte en la carpeta en la que hayas guardado este proyecto.
 Una vez abierta la terminal y estando en la ruta del proyecto, y si es la primera vez que descargas este proyecto, debes ejecutar el siguiente comando:
 
-npm install
+- npm install
 
 Con este comando vas a instalar todas las dependencias que se encuentran en el archivo package.json
 
