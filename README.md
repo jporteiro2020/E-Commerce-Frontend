@@ -30,12 +30,12 @@ Con este comando vas a instalar todas las dependencias que se encuentran en el a
 
 Ahora bien, si ya culminaste con todos los pasos anteriores, estamos en condiciones de ver cuales son los scripts disponibles y probados:
 
-npm start - Con este comando lo que vamos a hacer es ejecutar el proyecto, y una vez que termine de encender podrás acceder a la web a través de la siguiente URL:
+- npm start - Con este comando lo que vamos a hacer es ejecutar el proyecto, y una vez que termine de encender podrás acceder a la web a través de la siguiente URL:
 localhost:3000
 
 Nota: Para poder detener el proceso simplemente deberías ejecutar la combinación de teclas ctrl + C
 
-npm build - Con este comando se va a "construir" todos los archivos HTML, CSS y JS correspondientes, y que quedarán disponibles para su deploy en un servidor.
+- npm build - Con este comando se va a "construir" todos los archivos HTML, CSS y JS correspondientes, y que quedarán disponibles para su deploy en un servidor.
 
 ## Contacto:
 
