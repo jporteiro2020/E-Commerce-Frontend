@@ -8,7 +8,7 @@ Dicho proyecto está hecho con React, y tengo planificado modificar el diseño y
 En esta demo puedes visualizar todos los productos, filtrar por categoría a través del menú desplegable, visualizar las descripciones de los productos, y a su vez se puede
 buscar un producto en particular utilizando el buscador 🔍
 
-Este proyecto depende de la API que está publicada en este link: [API]https://github.com/jporteiro2020/E-Commerce-API
+Este proyecto depende de la API que está publicada en este link: [API](https://github.com/jporteiro2020/E-Commerce-API)
 
 ## Compatibilidad:
 
@@ -16,10 +16,10 @@ Este proyecto se ejecuta en Linux, Windows y MAC, siempre y cuando tengas instal
 
 ## Modo de uso:
 
-Como comentaba anteriormente, este proyecto depende de la [API]https://github.com/jporteiro2020/E-Commerce-API
+Como comentaba anteriormente, este proyecto depende de la [API](https://github.com/jporteiro2020/E-Commerce-API)
 Así que para poder visualizar los datos deben seguir los pasos del otro repositorio.
 
-Si ya cuentan con el proyecto de la [API]https://github.com/jporteiro2020/E-Commerce-API funcionando, pueden seguir con el resto de los pasos.
+Si ya cuentan con el proyecto de la [API](https://github.com/jporteiro2020/E-Commerce-API) funcionando, pueden seguir con el resto de los pasos.
 
 Debemos abrir una terminal o CMD (dependiendo del sistema operativo en el que te encuentres), y debes posicionarte en la carpeta en la que hayas guardado este proyecto.
 Una vez abierta la terminal y estando en la ruta del proyecto, y si es la primera vez que descargas este proyecto, debes ejecutar el siguiente comando:
