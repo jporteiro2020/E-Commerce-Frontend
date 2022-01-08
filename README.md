@@ -2,7 +2,7 @@
 
 ## Presentación:
 
-Este proyecto está pensado en un E-Commerce de una tienda de informática, venta de quipamientos tales como Computadoras, consolas, Notebooks, etc.
+Este proyecto está pensado en un E-Commerce de una tienda de informática, venta de equipamientos tales como Computadoras, consolas, Notebooks, etc.
 Dicho proyecto está hecho con React, y tengo planificado modificar el diseño y utilizar TailwindCSS.
 
 En esta demo puedes visualizar todos los productos, filtrar por categoría a través del menú desplegable, visualizar las descripciones de los productos, y a su vez se puede
