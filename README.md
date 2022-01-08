@@ -37,6 +37,15 @@ Nota: Para poder detener el proceso simplemente deberías ejecutar la combinaci�
 
 - npm build - Con este comando se va a "construir" todos los archivos HTML, CSS y JS correspondientes, y que quedarán disponibles para su deploy en un servidor.
 
+## Rutas disponibles:
+
+Si están utilizando un servidor en su máquina local, podrán acceder a las diferentes rutas usando la ip 127.0.0.1:4000/"<Nombre de la ruta>" o localhost:4000/"<Nombre de la ruta>"
+
+Las rutas disponibles en este proyecto son las siguientes:
+
+- / -> Con esta ruta podrán acceder a la página de inicio. Donde encontrarán información sobre la empresa ficticia. Uso: localhost:4000/
+- /tienda -> Con esta ruta podrán acceder a todos los productos que se encuentran en la base de datos (Por ahora no se delimita la cantidad de productos a visualizar en cada categoría)
+
 ## Contacto:
 
 Si tienen alguna duda o alguna sugerencia, pueden contactarme:
