@@ -44,7 +44,25 @@ Si están utilizando un servidor en su máquina local, podrán acceder a las dif
 Las rutas disponibles en este proyecto son las siguientes:
 
 - / -> Con esta ruta podrán acceder a la página de inicio. Donde encontrarán información sobre la empresa ficticia. Uso: localhost:4000/
-- /tienda -> Con esta ruta podrán acceder a todos los productos que se encuentran en la base de datos (Por ahora no se delimita la cantidad de productos a visualizar en cada categoría)
+- /tienda -> Con esta ruta podrán acceder a todos los productos que se encuentran en la base de datos (Por ahora no se delimita la cantidad de productos a visualizar en cada
+categoría, solamente se delimita en la sección Destacados a través de la base de datos, ya que es una vista). Uso: localhost:4000/tienda
+- /sucursal1 -> Con esta ruta podremos acceder a la página donde se visualizará la información "ficticia" de la sucursal 1, se podrá ver la ubicación en el mapa, la dirección,
+teléfono, horario, etc. Uso: localhost:4000/sucursal1
+- /sucursal2 -> Con esta ruta podremos acceder a la página donde se visualizará la información "ficticia" de la sucursal 2, se podrá ver la ubicación en el mapa, la dirección,
+teléfono, horario, etc. Uso: localhost:4000/sucursal2
+- /login -> Con esta ruta podrán acceder a la página de login (la funcionalidad de login no está implementada en el frontend). Uso: localhost:4000/login
+- /recuperar -> Con esta ruta podrán acceder a la página de recuperación de contraseña en el caso de que el usuario no recuerde su contraseña actual (Esta funcionalidad no está
+implementada aún en el frontend). Uso: localhost:3000/recuperar
+- /registro -> Con esta ruta podrán acceder a la página de registro de nuevo usuario (Esta funcionalidad no está implementada aún en el frontend). Uso: localhost:3000/registro
+- /busqueda/:stringBusqueda -> Esta ruta los llevará a la página con los resultados de la búsqueda que hayan realizado, esta ruta recibe como parámetro el string del producto que
+quieren buscar. Uso: localhost:3000/busqueda/consola
+- /pcEscritorio -> Esta ruta los llevará a una página en la cual se mostrarán todos los productos con la categoría pcEscritorio. Uso: localhost:3000/pcEscritorio
+- /notebooks -> Esta ruta los llevará a una página en la cual se mostrarán todos los productos con la categoría notebooks. Uso: localhost:3000/notebooks
+- /consolas  -> Esta ruta los llevará a una página en la cual se mostrarán todos los productos con la categoría consolas. Uso: localhost:3000/consolas
+- /consolasSubCat/:stringCategoria -> Esta ruta los llevará a una página en la cual se mostrarán todos los productos con la subcategoría de consolas,
+esta ruta recibe como parámetro el nombre de la subcategoría, en el código esta ruta ya está harcodeada en el menú del Header. Uso: localhost:3000/consolasSubCat/xbox
+- /detalle/:idProducto -> Esta ruta los llevará al detalle de cada producto, esta recibe como parámetro el ID del producto. Esta ruta ya está harcodeada en el código.
+Se genera automáticamente cuando se listan los productos que recibimos del servidor.
 
 ## Contacto:
 
