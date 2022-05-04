@@ -1,5 +1,7 @@
 # E-Commerce Frontend
 
+Desarrollador: [Jonatan Porteiro](https://www.linkedin.com/in/jonatan-porteiro/)
+
 ## Presentación:
 
 Este proyecto está pensado en un E-Commerce de una tienda de informática, venta de equipamientos tales como Computadoras, consolas, Notebooks, etc.
