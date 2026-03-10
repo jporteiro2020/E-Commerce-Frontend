@@ -1,0 +1,85 @@
+/* =================================================
+   SPINNER — Professional SVG ring loader
+   ================================================= */
+
+/* --- Overlay (page-level) --- */
+.spinner-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(17, 24, 39, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: overlayIn 0.2s ease;
+}
+@keyframes overlayIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* --- Base spinner --- */
+.spinner {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.spinner__ring {
+    position: relative;
+    display: flex;
+}
+
+.spinner__ring svg {
+    animation: spinRotate 1.2s linear infinite;
+}
+@keyframes spinRotate {
+    to { transform: rotate(360deg); }
+}
+
+/* Track (fondo del anillo) */
+.spinner__track {
+    stroke: rgba(2, 126, 251, 0.15);
+}
+
+/* Arc (segmento animado) — gradiente logrado via stroke-dashoffset */
+.spinner__arc {
+    stroke: var(--clr-blue);
+    stroke-dasharray: 80 126;
+    stroke-dashoffset: 0;
+    animation: spinRotate 1.2s linear infinite,
+               spinPulse  2.4s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(2,126,251,.6));
+}
+@keyframes spinPulse {
+    0%, 100% { stroke-dasharray: 80 126; }
+    50%       { stroke-dasharray: 110 96; }
+}
+
+/* --- Sizes --- */
+.spinner--sm .spinner__ring svg { width: 24px; height: 24px; }
+.spinner--md .spinner__ring svg { width: 40px; height: 40px; }
+.spinner--lg .spinner__ring svg { width: 60px; height: 60px; }
+.spinner--page .spinner__ring svg { width: 72px; height: 72px; }
+
+/* --- Label --- */
+.spinner__label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.7);
+    letter-spacing: 0.03em;
+    animation: labelPulse 1.4s ease-in-out infinite;
+}
+@keyframes labelPulse {
+    0%, 100% { opacity: 0.6; }
+    50%       { opacity: 1; }
+}
+
+/* --- Inline uso dentro de botones --- */
+.spinner--sm .spinner__ring svg {
+    vertical-align: middle;
+}

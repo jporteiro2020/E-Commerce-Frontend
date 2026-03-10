@@ -1,6 +1,133 @@
-# E-Commerce Frontend
+# IT's Possible — E-Commerce Frontend
 
-Desarrollador: [Jonatan Porteiro](https://www.linkedin.com/in/jonatan-porteiro/)
+Desarrollado por [Jonatan Porteiro](https://www.linkedin.com/in/jonatan-porteiro/)
+
+E-Commerce de una tienda de informática que comercializa PCs de escritorio, notebooks, consolas y más. Proyecto full-stack compuesto por este repositorio (frontend) y la [API REST](https://github.com/jporteiro2020/E-Commerce-API) (backend).
+
+---
+
+## Stack tecnológico
+
+| Capa | Tecnología |
+|---|---|
+| Framework | React 19 + Vite 6 |
+| Ruteo | React Router v6 |
+| Estado global | Redux Toolkit + React-Redux |
+| Formularios | Formik + Yup |
+| Mapas | Leaflet + React-Leaflet (OpenStreetMap, sin token) |
+| Estilos | CSS Modules propios + variables CSS |
+| HTTP | Fetch API nativo |
+
+---
+
+## Funcionalidades implementadas
+
+### Catálogo
+- Listado de productos por categoría (PC Escritorio, Notebooks, Consolas, SubCategorías)
+- Buscador de productos en tiempo real
+- Vista de detalle de producto
+
+### Autenticación
+- Registro de usuario
+- Inicio de sesión con JWT (8 h de expiración)
+- Recuperación de contraseña (UI lista, endpoint pendiente en backend)
+- Rutas protegidas (`/perfil`, `/mis-ordenes`) — redirigen a `/login` si no hay sesión
+- Rutas públicas (`/login`, `/registro`, `/recuperar`) — redirigen a `/` si ya hay sesión activa
+
+### Perfil de usuario
+- Vista de datos en modo lectura
+- Edición inline de nombre, apellido, dirección, email y teléfono
+- Cambio de contraseña
+- Eliminación de cuenta con confirmación
+
+### Carrito y Checkout
+- Carrito persistido en servidor para usuarios autenticados, en Redux para invitados
+- Actualización optimista de cantidades
+- Checkout autenticado → crea orden en DB
+- Checkout de invitado → genera orden con token de seguimiento (sin registro previo)
+- Seguimiento de orden por tracking token (accesible desde URL o buscador)
+
+### Órdenes
+- Listado de mis órdenes con estado (Pendiente de pago / Pagada / Cancelada)
+- Detalle de cada orden con desglose de productos
+
+### Mapa de sucursales
+- Sucursal 1: Juan Paullier 2378
+- Sucursal 2: Demóstenes 3532
+- Mapa interactivo con Leaflet + OpenStreetMap (sin necesidad de API token)
+
+---
+
+## Requisitos previos
+
+- Node.js 18 o superior
+- La [API REST](https://github.com/jporteiro2020/E-Commerce-API) corriendo localmente en el puerto 4000
+
+---
+
+## Instalación y uso
+
+```bash
+# 1. Instalar dependencias
+npm install
+
+# 2. Configurar variables de entorno
+cp .env.example .env
+# Editar .env y ajustar VITE_API_URL si la API corre en otro puerto
+
+# 3. Modo desarrollo (hot reload)
+npm run dev
+# → http://localhost:5173
+
+# 4. Build de producción
+npm run build
+
+# 5. Preview del build
+npm run preview
+```
+
+---
+
+## Variables de entorno
+
+```env
+VITE_API_URL=http://localhost:4000
+```
+
+---
+
+## Rutas disponibles
+
+| Ruta | Descripción | Acceso |
+|---|---|---|
+| `/` | Inicio — bienvenida e info de sucursales | Público |
+| `/tienda` | Catálogo completo de productos | Público |
+| `/busqueda/:query` | Resultados de búsqueda | Público |
+| `/pcEscritorio` | Categoría PC Escritorio | Público |
+| `/notebooks` | Categoría Notebooks | Público |
+| `/consolas` | Categoría Consolas | Público |
+| `/consolasSubCat/:categoria` | Subcategorías de consolas | Público |
+| `/detalle/:idProducto` | Detalle de producto | Público |
+| `/sucursal1` | Mapa y datos de Sucursal 1 | Público |
+| `/sucursal2` | Mapa y datos de Sucursal 2 | Público |
+| `/login` | Inicio de sesión | Solo no autenticados |
+| `/registro` | Registro de nuevo usuario | Solo no autenticados |
+| `/recuperar` | Recuperar contraseña | Solo no autenticados |
+| `/carrito` | Carrito de compras | Público |
+| `/checkout-invitado` | Checkout sin registro | Público |
+| `/seguimiento` | Seguimiento de orden por token | Público |
+| `/seguimiento/:token` | Seguimiento directo por token | Público |
+| `/perfil` | Datos del usuario autenticado | 🔒 Requiere sesión |
+| `/mis-ordenes` | Listado de órdenes del usuario | 🔒 Requiere sesión |
+| `/mis-ordenes/:idOrden` | Detalle de una orden | 🔒 Requiere sesión |
+
+---
+
+## Contacto
+
+- [LinkedIn](https://www.linkedin.com/in/jonatan-porteiro/)
+- Email: jonatan.porteiro@protonmail.com
+
 
 ## Presentación:
 

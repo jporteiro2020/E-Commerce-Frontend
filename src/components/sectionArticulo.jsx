@@ -1,27 +1,33 @@
-import React from "react";
+import React from 'react';
 import ArticulosProductos from './articuloProducto';
+import SkeletonCard from './SkeletonCard';
+import Spinner from './Spinner';
+import './Spinner.css';
 
-function SectionArticulo(props) {
-    const productos = props.productos;
-    const estiloSection = props.estiloSection;
-    const idSection = props.idSection;
-    const titulo = props.titulo;
-    const idDiv = props.idDiv;
-    const keyVal = props.keyVal;
-  
-    if (productos.length === 0) {
-        return <div>No hay productos</div>;
-    }
-
-    if(!estiloSection | !idSection | !titulo | !idDiv){
-        return <div>No hay productos</div>;
-    }
+function SectionArticulo({ productos, estiloSection, idSection, titulo, idDiv, loading, error }) {
+    if (!estiloSection || !idSection || !titulo || !idDiv) return null;
 
     return (
-        <section className={estiloSection} id={idSection} key = { keyVal }>
-            <h2>{titulo}</h2>
+        <section className={`${estiloSection} page-fade`} id={idSection} aria-labelledby={`titulo-${idSection}`}>
+            <h2 className="section-titulo" id={`titulo-${idSection}`}>{titulo}</h2>
             <div id={idDiv} className="media-q">
-                <ArticulosProductos productos = {productos}/>
+                {loading ? (
+                    <>
+                        {[...Array(4)].map((_, i) => <SkeletonCard key={i} />)}
+                    </>
+                ) : error ? (
+                    <div className="section-feedback error" role="alert">
+                        <i className="fas fa-exclamation-circle" aria-hidden="true"></i>
+                        <p>{error}</p>
+                    </div>
+                ) : productos.length === 0 ? (
+                    <div className="section-feedback empty">
+                        <i className="fas fa-box-open" aria-hidden="true"></i>
+                        <p>No hay productos disponibles.</p>
+                    </div>
+                ) : (
+                    <ArticulosProductos productos={productos} />
+                )}
             </div>
         </section>
     );

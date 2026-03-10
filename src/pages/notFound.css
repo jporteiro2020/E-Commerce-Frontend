@@ -1,0 +1,107 @@
+/* =================================================
+   404 NOT FOUND PAGE
+   ================================================= */
+.not-found-page {
+    min-height: calc(100vh - 68px - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    animation: pageFade 0.4s ease;
+}
+
+.not-found-inner {
+    text-align: center;
+    max-width: 500px;
+}
+
+/* Giant 404 with spinning 0 */
+.not-found-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    font-size: clamp(5rem, 18vw, 9rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--clr-blue);
+    margin-bottom: 1.5rem;
+    user-select: none;
+}
+
+.not-found-zero {
+    color: rgba(2, 126, 251, 0.4);
+    font-size: 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-found-zero .fa-circle-notch {
+    filter: drop-shadow(0 0 16px rgba(2,126,251,.5));
+}
+
+.not-found-title {
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    font-weight: 700;
+    color: var(--clr-dark);
+    margin-bottom: 0.75rem;
+}
+
+.not-found-desc {
+    color: var(--clr-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.not-found-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+/* Shared button classes (also used by other pages) */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--clr-blue);
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+}
+.btn-primary:hover {
+    background: var(--clr-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(2,126,251,.35);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--clr-blue);
+    border: 1.5px solid var(--clr-blue);
+    border-radius: var(--radius-full);
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    text-decoration: none;
+}
+.btn-secondary:hover {
+    background: var(--clr-blue-light);
+    color: var(--clr-blue-dark);
+}

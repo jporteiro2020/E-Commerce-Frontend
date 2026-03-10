@@ -1,0 +1,89 @@
+/* =================================================
+   CHECKOUT INVITADO
+   ================================================= */
+
+.checkout-invitado-card {
+    max-width: 620px;
+}
+
+/* ── Resumen de items ── */
+.checkout-items-resumen {
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkout-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.875rem;
+    color: var(--clr-text);
+}
+
+.checkout-item-name em {
+    font-style: normal;
+    color: var(--clr-muted);
+    font-size: 0.82rem;
+}
+
+.checkout-item-sub {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.checkout-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 0.97rem;
+    color: var(--clr-dark);
+    border-top: 1px solid var(--clr-border);
+    margin-top: 0.35rem;
+    padding-top: 0.6rem;
+}
+
+/* ── Section titles ── */
+.checkout-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--clr-muted);
+    margin: 1.4rem 0 0.75rem;
+}
+
+/* ── Two-column grid ── */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkout-full {
+    grid-column: 1 / -1;
+}
+
+/* ── Login link inside subtitle ── */
+.checkout-login-link {
+    color: var(--clr-blue);
+    font-weight: 600;
+    transition: opacity var(--transition-fast);
+}
+.checkout-login-link:hover { opacity: .75; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+    .checkout-full {
+        grid-column: 1;
+    }
+}

@@ -1,0 +1,66 @@
+/* =================================================
+   MAPA DE SUCURSALES
+   ================================================= */
+#contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#map {
+    height: 70vh;
+    width: 100%;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--clr-border);
+    box-shadow: var(--shadow-lg);
+    z-index: 1;
+}
+
+#map a {
+    font-size: 0.875rem;
+    color: var(--clr-blue);
+}
+
+.horario,
+.ubicacion {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+}
+
+.horario h3,
+.ubicacion h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 0.6rem;
+}
+
+.horario li,
+.ubicacion li {
+    font-size: 0.875rem;
+    color: var(--clr-muted);
+    padding: 0.2rem 0;
+}
+
+@media (max-width: 600px) {
+    #map { height: 55vh; }
+}
+
+/*Aquí comienza la media queries para los dispositivos móviles*/
+@media (max-width:415px) and (min-width:320px) {
+    #map {
+        /* height: 75vh; */
+        width: 100vw;
+    }
+
+    /*.leaflet-routing-container{
+        height: 100%;
+        width: 40%;
+    }*/
+
+}

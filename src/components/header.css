@@ -1,144 +1,515 @@
-header a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.7rem;
+/* =================================================
+   HEADER — Sticky modern dark navbar
+   ================================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(17, 24, 39, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+    padding: 0 1.75rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 0;
 }
 
-header{
-    display: grid;
-    grid-area: header;
-    background-color: #2c2c2c;
-    color: white;
-    grid-template-areas: "logo nav busqueda contacto carrito";
+header a { text-decoration: none; color: white; }
+
+/* ===== LEFT: logo + productos ===== */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* ===== CENTER: search + contacto ===== */
+.header-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 1.25rem;
+    padding: 0 1rem;
+}
+
+/* ===== RIGHT: auth + cart + hamburger ===== */
+.header-right {
+    display: flex;
     align-items: center;
-    gap: 30px;
-    margin-bottom: 5vh;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
-/*Logo es la clase de la etiqueta img contenedor del logo*/
-.logo{
-    grid-area: logo;
-    width: 7.5vw;
-    height: 15vh;
-}
-
-nav{
-    grid-area: nav;
-}
-
-/* es la clase del form contenedor del input y botón de búsqueda */
-.busqueda{
-    grid-area: busqueda;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    height: 40px;
-}
-
-/* La clase contacto es del contendor DIV donde tiene una etiqueta p, i y p. Siendo i el ícono de whatsapp */
-.contacto{
-    grid-area: contacto;
-    display: grid;
-    grid-template-areas: "contacto-p contacto-p"
-                         "icono-wpp p-wpp";
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
+/* Auth links — small, muted */
+.header-auth {
+    display: flex;
     align-items: center;
+    gap: 0.25rem;
 }
-
-.contacto-p{
-    grid-area: contacto-p;
-    font-size: 1.8rem;
-}
-
-.wpp-icon-grid{
-    grid-area: icono-wpp;
-    font-size: 1.7rem;
-}
-
-.wpp-p-grid{
-    grid-area: p-wpp;
-    font-size: 1.4rem;
-}
-
-/* Esta etiqueta corresponde al contendor DIV donde se encuentra un ícono con forma de carrito y el monto total de la compra */
-.carrito{
-    display: grid;
-    grid-template-areas: "precio icono";
-    justify-items: center;
+.header-auth a {
+    display: flex;
     align-items: center;
-    grid-area: carrito;
+    gap: 0.3rem;
+    padding: 0.35rem 0.65rem;
+    color: rgba(255, 255, 255, .55);
+    font-size: 0.78rem;
+    font-weight: 400;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+    transition: color var(--transition-fast), background var(--transition-fast);
 }
-
-.precio{
-    grid-area: precio;
-    font-size: 1.4rem;
+.header-auth a:hover {
+    color: rgba(255, 255, 255, .9);
+    background: rgba(255, 255, 255, .07);
 }
-
-.icono{
-    grid-area: icono;
-    font-size: 1.7rem;
+.header-user-name {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.65rem;
+    color: rgba(255, 255, 255, .75);
+    font-size: 0.78rem;
+    font-weight: 600;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
-/* Aquí se comienza a dar estilo al contenedor del form de la búsqueda */
-.estilo-busqueda input {
+.header-logout {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.65rem;
+    color: rgba(255, 120, 120, .75);
+    font-size: 0.78rem;
+    font-weight: 400;
+    border-radius: var(--radius-md);
+    background: transparent;
     border: none;
-    width: 13vw;
-    font-size: 1rem;
-    border: 2px solid rgb(3, 18, 41);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color var(--transition-fast), background var(--transition-fast);
 }
+.header-logout:hover {
+    color: #ff7070;
+    background: rgba(255, 100, 100, .1);
+}
+
+/* Logo */
+.logo {
+    height: 44px;
+    width: auto;
+    flex-shrink: 0;
+    transition: opacity var(--transition-fast);
+}
+.logo:hover { opacity: .85; }
+
+/* ---- NAV ---- */
+nav { flex-shrink: 0; }
+
+.ul-nav {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.ul-nav > li {
+    position: relative;
+}
+
+.ul-nav > li > a {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, .88);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+}
+.ul-nav > li > a:hover {
+    background: rgba(255, 255, 255, .1);
+    color: white;
+}
+
+/* Dropdown L1 */
+.ul-nav li ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .35);
+    min-width: 175px;
+    z-index: 200;
+    padding: 0.4rem 0;
+    animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.ul-nav li:hover > ul { display: block; }
+
+.ul-nav li ul li a {
+    display: block;
+    padding: 0.45rem 1rem;
+    color: rgba(255, 255, 255, .78);
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+.ul-nav li ul li a:hover {
+    background: rgba(255, 255, 255, .07);
+    color: white;
+}
+
+/* Dropdown L2 (Consolas submenu) */
+.ul-nav li ul li ul {
+    left: 100%;
+    top: -0.4rem;
+}
+
+/* ---- SEARCH WRAPPER + SUGGEST ---- */
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 340px;
+}
+
+.search-wrapper .busqueda {
+    width: 100%;
+    max-width: 100%;
+}
+
+.suggest-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #1a2333;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .45);
+    z-index: 500;
+    overflow: hidden;
+    animation: dropIn 0.15s ease;
+}
+
+.suggest-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition-fast);
+    color: white;
+}
+.suggest-item:last-of-type { border-bottom: none; }
+.suggest-item:hover { background: rgba(2, 126, 251, .12); }
+
+.suggest-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,.06);
+    flex-shrink: 0;
+}
+
+.suggest-name {
+    flex: 1;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.88);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggest-price {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--clr-blue);
+    flex-shrink: 0;
+}
+
+.suggest-feedback {
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,.45);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.suggest-footer {
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 0.3rem 0.4rem;
+}
+.suggest-footer button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--clr-blue);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5rem 0.5rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+.suggest-footer button:hover { background: rgba(2, 126, 251, .1); }
+
+/* ---- SEARCH ---- */
+.busqueda {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    flex: 1;
+    max-width: 340px;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+    height: 38px;
+}
+.busqueda:focus-within {
+    background: rgba(255, 255, 255, .13);
+    border-color: var(--clr-blue);
+}
+
+.estilo-busqueda input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.85rem;
+    width: 100%;
+}
+.estilo-busqueda input::placeholder { color: rgba(255, 255, 255, .4); }
 
 .estilo-busqueda button {
-    background-color: black;
+    background: transparent;
     border: none;
-    font-weight: bold;
-    color: white;
-    width: 3vw;
-    border: 2px solid rgb(3, 18, 41);
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 1rem;
-    font-size: 1rem;
-    display: grid;
-    justify-content: center;
+    color: rgba(255, 255, 255, .55);
+    padding: 0 0.85rem;
+    height: 100%;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+    flex-shrink: 0;
+}
+.estilo-busqueda button:hover { color: white; }
+
+/* ---- CONTACTO ---- */
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    flex-shrink: 0;
+}
+.contacto-p  { font-size: 0.68rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .05em; }
+.wpp-p-grid  { font-size: 0.875rem; color: white; font-weight: 600; }
+.wpp-icon-grid { font-size: 1rem; color: #25d366; }
+
+/* ---- CART BUTTON ---- */
+.cart-btn {
+    position: relative;
+    display: flex;
     align-items: center;
+    gap: 0.55rem;
+    background: rgba(2, 126, 251, .16);
+    border: 1.5px solid rgba(2, 126, 251, .35);
+    border-radius: var(--radius-full);
+    color: white;
+    padding: 0.55rem 1.2rem 0.55rem 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.cart-btn:hover {
+    background: rgba(2, 126, 251, .3);
+    border-color: var(--clr-blue);
+    transform: translateY(-1px);
+}
+.cart-btn .fa-shopping-cart { font-size: 1.1rem; color: var(--clr-blue); }
+
+.cart-badge {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background: var(--clr-blue);
+    color: white;
+    font-size: 0.63rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #111827;
 }
 
-.estilo-busqueda button:hover {
-	background: #2c2c2c;
-    font-size: 1.5rem;
-}
+/* Mobile nav — hidden globally, only shown inside media query */
+.mobile-nav { display: none; }
 
-/* Aquí se comienza a dar estilo al menú desplegable */
-.ul-nav li a {
-    background-color:#2c2c2c;
-    border: 1px solid rgb(3, 18, 41);
-    color:#fff;
-    text-decoration:none;
-    padding:10px 12px;
-    display:block;
-}
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) { .contacto { display: none; } }
+@media (max-width: 900px)  { .header-auth { display: none; } }
 
-.ul-nav li a:hover {
-    background-color:#434343;
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0.4rem;
+    cursor: pointer;
+    z-index: 300;
+    flex-shrink: 0;
 }
-    
-.ul-nav li ul {
-    display:none;
-    position:absolute;
-    min-width:140px;
+.hamburger__line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    transform-origin: center;
 }
+.hamburger.open .hamburger__line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open .hamburger__line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open .hamburger__line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.ul-nav li:hover > ul {
-    display:block;
-    z-index: 2;
-}
+@media (max-width: 700px) {
+    header {
+        gap: 0.75rem;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 60px;
+    }
+    .logo { height: 36px; }
 
-.ul-nav li ul li {
-    position:relative;
-}
+    /* Hide desktop nav and search */
+    nav { display: none; }
+    .busqueda { display: none; }
+    .contacto { display: none; }
 
-.ul-nav li ul li ul {
-    right:-157px;
-    top:0px;
+    .hamburger { display: flex; margin-left: auto; }
+
+    /* Cart stays visible but compact */
+    .cart-total { display: none; }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+        display: none; /* default: hidden even on mobile until .open */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(17,24,39,0.98);
+        backdrop-filter: blur(16px);
+        z-index: 200;
+        padding: 1.5rem 1.25rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        overflow-y: auto;
+        animation: mobileNavIn 0.25s ease;
+    }
+    .mobile-nav.open { display: flex; }
+
+    @keyframes mobileNavIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .mobile-nav a {
+        display: block;
+        padding: 0.9rem 1rem;
+        color: rgba(255,255,255,.85);
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: var(--radius-md);
+        transition: background var(--transition-fast), color var(--transition-fast);
+    }
+    .mobile-nav a:hover { background: rgba(255,255,255,.08); color: white; }
+
+    .mobile-logout {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0.9rem 1rem;
+        color: rgba(255, 120, 120, .8);
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: var(--radius-md);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: background var(--transition-fast), color var(--transition-fast);
+    }
+    .mobile-logout:hover { background: rgba(255,100,100,.1); color: #ff7070; }
+
+    .mobile-nav .mobile-section-title {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        color: rgba(255,255,255,.35);
+        padding: 1rem 1rem 0.25rem;
+    }
+
+    .mobile-search {
+        display: flex;
+        align-items: center;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        height: 42px;
+        margin-bottom: 0.75rem;
+    }
+    .mobile-search input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+    .mobile-search input::placeholder { color: rgba(255,255,255,.35); }
+    .mobile-search button {
+        background: transparent;
+        border: none;
+        color: rgba(255,255,255,.55);
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
 }

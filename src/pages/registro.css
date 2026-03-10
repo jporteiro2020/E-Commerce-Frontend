@@ -1,0 +1,52 @@
+/* registro.css — styles inherited from login.css shared rules */
+.registro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+}
+
+.titulo-registro {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--clr-text);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.registro input {
+    padding: 0.65rem 0.85rem;
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    color: var(--clr-text);
+    background: var(--clr-bg);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    width: 100%;
+}
+.registro input:focus {
+    border-color: var(--clr-blue);
+    box-shadow: 0 0 0 3px rgba(2,126,251,.12);
+    background: var(--clr-surface);
+}
+
+#btn-Registro {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--clr-blue), var(--clr-blue-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    width: 100%;
+}
+#btn-Registro:hover {
+    opacity: .9;
+    transform: translateY(-1px);
+}

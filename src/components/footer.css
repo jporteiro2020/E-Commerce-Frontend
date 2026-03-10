@@ -1,65 +1,123 @@
-footer{
-    grid-area: footer;
+/* =================================================
+   FOOTER — Modern dark footer
+   ================================================= */
+footer {
+    background: #111827;
+    color: white;
+    padding: 3rem 2rem 2rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
     display: grid;
-    grid-template-areas: "subscipcionFooter direccionFooter";
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* ---- NEWSLETTER ---- */
+.subscripcion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.titulo-suscripcion {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.subscripcion input {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--radius-md);
+    color: white;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    outline: none;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+    width: 100%;
+}
+.subscripcion input::placeholder { color: rgba(255,255,255,.35); }
+.subscripcion input:focus {
+    border-color: var(--clr-blue);
+    background: rgba(255,255,255,.1);
+}
+
+.subscripcion .error-msg {
+    font-size: 0.78rem;
+    color: #f87171;
+}
+
+#btnSuscribir {
+    background: linear-gradient(135deg, var(--clr-blue), var(--clr-blue-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 0.65rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    align-self: flex-start;
+}
+#btnSuscribir:hover {
+    opacity: .9;
+    transform: translateY(-1px);
+}
+
+/* ---- DIRECCIONES ---- */
+.direccion-footer h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.direccion-footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.direccion-footer li {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,.65);
+    line-height: 1.5;
+    display: flex;
     align-items: center;
-    background-color: #2c2c2c;
-    color: white;
-    gap: 80px;
-    margin-top: 5vh;
+    gap: 0.6rem;
+    flex-wrap: wrap;
 }
 
-/* Esta clase corresponde al form que se encutra en el footer para la suscripción */
-.subscripcion{
-    grid-area: subscipcionFooter;
-    display: grid;
-    grid-template-areas: "titulo"
-                         "nombre"
-                         "email"
-                         "botonSuscripcion";
-    justify-content: center;
-    align-content: center;
-    gap: 15px;
-    background: rgb(3, 18, 41);
-    border-radius: 1rem;
-    color: white;
-    height: 25vh;
-    width: 17vw;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+.direccion-footer a {
+    color: var(--clr-blue);
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: opacity var(--transition-fast);
+}
+.direccion-footer a:hover { opacity: .75; }
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 2rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,.07);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,.35);
+    text-align: center;
 }
 
-.titulo-suscripcion{
-    grid-area: titulo;
-}
-
-.nombre-suscripcion{
-    grid-area: nombre;
-}
-
-.email-suscripcion{
-    grid-area: email;
-}
-
-.boton-suscripcion{
-    grid-area: botonSuscripcion;
-}
-
-/* Esta clase corresponde al contendor DIV que se encuentra en el footer, contiene la información básica de la empresa */
-.direccion-footer{
-    grid-area: direccionFooter;
-}
-
-/* Aquí se comienza a dar estilo a los elementos del form de la suscripción que se encuentran en el footer */
-.subscripcion input{
-    height: 90%;
-    width: 90%;
-    border: 1px solid rgb(3, 18, 41);
-}
-
-.subscripcion button{
-    height: 90%;
-    width: 90%;
-    border: 1px solid rgb(3, 18, 41);
+/* ---- RESPONSIVE ---- */
+@media (max-width: 640px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }

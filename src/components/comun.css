@@ -1,29 +1,23 @@
-/* Se resetean los valores del body */
-*{
-    padding: 0;
-    margin: 0;
-}
+/* =================================================
+   LAYOUT BASE
+   ================================================= */
 
-li{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.7rem;
-}
-
-/* Page es la clase dada al body */
-.page{
+/* Sticky footer grid — only for static HTML pages (not used in React app) */
+.page {
     display: grid;
-    grid-template-areas: "header"
-                         "main"
-                         "footer";
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    background: var(--clr-bg);
 }
 
-main{
+main:not(.main-content) {
+    padding: 2rem 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+main:not(.main-content) {
     grid-area: main;
 }
 
@@ -96,3 +90,136 @@ main{
         margin-top: 20px;
     }
 }
+
+/* =================================================
+   SHARED FORM CARD STYLES (Login, Registro, Recuperar)
+   ================================================= */
+.form-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    flex: 1;
+}
+
+.form-card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 2.75rem 2.5rem;
+    width: 100%;
+    max-width: 440px;
+}
+
+.form-card-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--clr-text);
+    margin-bottom: 0.4rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.form-card-subtitle {
+    font-size: 0.875rem;
+    color: var(--clr-muted);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.field-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.field-wrap label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--clr-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.form-card input:not([type="submit"]):not([type="checkbox"]) {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    color: var(--clr-text);
+    background: var(--clr-bg);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.form-card input:focus {
+    border-color: var(--clr-blue);
+    box-shadow: 0 0 0 3px rgba(2,126,251,.12);
+    background: var(--clr-surface);
+}
+
+/* Borde rojo cuando el campo tiene error */
+.form-card input.input-error {
+    border-color: var(--clr-error);
+}
+
+.field-error {
+    font-size: 0.75rem;
+    color: var(--clr-error);
+    margin-top: 0.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.field-error::before {
+    content: "⚠";
+    font-size: 0.7rem;
+}
+
+.btn-form-submit {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, var(--clr-blue), var(--clr-blue-dark));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 14px rgba(2,126,251,.3);
+    font-family: var(--font-sans);
+    letter-spacing: .01em;
+}
+.btn-form-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(2,126,251,.4);
+}
+.btn-form-submit:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-card-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.4rem;
+}
+.form-card-links a {
+    font-size: 0.85rem;
+    color: var(--clr-blue);
+    transition: opacity var(--transition-fast);
+}
+.form-card-links a:hover { opacity: .75; }

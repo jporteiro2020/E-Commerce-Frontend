@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* =============================================
+   DESIGN TOKENS — IT's Possible Design System
+   ============================================= */
+:root {
+  /* Colors */
+  --clr-bg:           #f0f2f7;
+  --clr-surface:      #ffffff;
+  --clr-dark:         #111827;
+  --clr-navy:         #031229;
+  --clr-blue:         #027efb;
+  --clr-blue-dark:    #0056c7;
+  --clr-blue-light:   #e8f3ff;
+  --clr-text:         #1e293b;
+  --clr-muted:        #64748b;
+  --clr-border:       #e2e8f0;
+  --clr-success:      #16a34a;
+  --clr-error:        #dc2626;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Border radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:        0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:        0 4px 12px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+  --shadow-lg:        0 12px 28px rgba(0,0,0,.10), 0 4px 10px rgba(0,0,0,.06);
+  --shadow-card-hover:0 20px 40px rgba(2,126,251,.18), 0 6px 14px rgba(0,0,0,.08);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* =============================================
+   GLOBAL RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+li { list-style: none; }
+a  { text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: var(--font-sans); cursor: pointer; }
+
+/* =============================================
+   FOCUS VISIBLE — Accessibility
+   ============================================= */
+:focus-visible {
+  outline: 2px solid var(--clr-blue);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* =============================================
+   PAGE TRANSITIONS
+   ============================================= */
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-fade {
+  animation: pageFade 0.35s ease both;
 }
